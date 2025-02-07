@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(AlbertAkonadi)
+project(contact_kde VERSION 0.1)
 
 
 set(QT_MIN_VERSION "6.5.0")
@@ -22,7 +22,12 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(KPim6Akonadi REQUIRED)
 
 # Add the executable
-add_executable(AlbertAkonadi main.cpp)
+add_executable(AlbertAkonadi src/main.cpp)
 
 # Link the necessary libraries
 target_link_libraries(AlbertAkonadi KPim6::AkonadiCore KPim6::AkonadiWidgets)
+
+# albert_plugin(
+# 				LINK PRIVATE ${KPim6Akonadi}
+# 				QT Widgets
+# )

@@ -1,0 +1,8 @@
+{
+    "authors": ["@Pete-Hamlin"],
+    "description": "Access system contacts within KDE framework.",
+    "license": "MIT",
+    "name": "Contacts",
+    "name[de]": "Kontakte",
+    "url": "https://github.com/albertlauncher/plugins/tree/main/contact_kde",
+}

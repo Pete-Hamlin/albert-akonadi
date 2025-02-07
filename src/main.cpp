@@ -3,6 +3,11 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 
+
+namespace Akonadi {
+    class Session;
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
@@ -10,7 +15,7 @@ int main(int argc, char *argv[])
     // Create a fetch job to list all collections
     Akonadi::CollectionFetchJob *fetchJob = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(),
                                                                             Akonadi::CollectionFetchJob::Recursive);
-    fetchJob->fetchScope().setResource("akonadi_maildir_resource");
+    fetchJob->setFetchScope("akonadi_maildir_resource");
 
     QObject::connect(fetchJob, &Akonadi::CollectionFetchJob::result, [](KJob *job) {
         if (job->error()) {
