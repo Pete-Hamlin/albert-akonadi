@@ -20,14 +20,17 @@ include(FeatureSummary)
 # Find necessary packages
 find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(KPim6Akonadi REQUIRED)
+find_package(KF6Contacts REQUIRED)
+
 
 # Add the executable
 add_executable(AlbertAkonadi src/main.cpp)
 
 # Link the necessary libraries
 target_link_libraries(AlbertAkonadi KPim6::AkonadiCore KPim6::AkonadiWidgets)
+target_link_libraries(AlbertAkonadi KF6::Contacts)
 
 # albert_plugin(
-# 				LINK PRIVATE ${KPim6Akonadi}
+# 				LINK PRIVATE ${KPim6::AkonadiCore KPim6::AkonadiWidgets KF6::Contacts}
 # 				QT Widgets
 # )
